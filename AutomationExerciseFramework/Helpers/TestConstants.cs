@@ -21,5 +21,10 @@ namespace AutomationExerciseFramework.Helpers
         public const string ZipCode = "18000";
         public const string Phone = "0638212595";
 
+        //contact us data
+
+        public const string Subject = "Request";
+        public const string Message = "Would you be able to remove all ads from your website please?";
+
     }
 }
