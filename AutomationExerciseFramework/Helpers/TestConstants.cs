@@ -26,5 +26,7 @@ namespace AutomationExerciseFramework.Helpers
         public const string Subject = "Request";
         public const string Message = "Would you be able to remove all ads from your website please?";
 
+      
+
     }
 }

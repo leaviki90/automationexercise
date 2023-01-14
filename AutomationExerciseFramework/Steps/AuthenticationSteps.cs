@@ -56,7 +56,7 @@ namespace AutomationExerciseFramework.Steps
             ut.ClickOnElement(ap.signupBtn);
         }
 
-        [When(@"user fills in all required fields")]
+        [StepDefinition(@"user fills in all required fields")]
         public void WhenUserFillsInAllRequiredFields()
         {
             SignupPage sp = new SignupPage(Driver);
@@ -71,7 +71,7 @@ namespace AutomationExerciseFramework.Steps
             ut.EnterTextInElement(sp.mobile, TestConstants.Phone);
         }
 
-        [When(@"submits the signUp form")]
+        [StepDefinition(@"submits the signUp form")]
         public void WhenSubmitsTheSignUpForm()
         {
             SignupPage sp = new SignupPage(Driver);
@@ -88,6 +88,26 @@ namespace AutomationExerciseFramework.Steps
             Assert.True(ut.TextPresentInElement(message), "User did NOT get expected success message"); //provera
             ut.ClickOnElement(acp.countinueBtn);
         }
+
+        [Given(@"user can register account with ""(.*)"" name")]
+        public void GivenUserCanRegisterAccountWithName(string name)
+        {
+    
+            GivenUserOpensSignInPage();
+            GivenEntersNameAndValidEmailAddress(name);
+            GivenUserClicksOnSignUpButton();
+            WhenUserFillsInAllRequiredFields();
+            WhenUserSubmitsTheForm();
+            AccountCreatedPage acp = new AccountCreatedPage(Driver);
+            ut.ClickOnElement(acp.countinueBtn);
+        }
+
+        [When(@"user selects option for deleting the account")]
+        public void WhenUserSelectsOptionForDeletingTheAccount()
+        {
+            ScenarioContext.Current.Pending();
+        }
+
 
     }
 }

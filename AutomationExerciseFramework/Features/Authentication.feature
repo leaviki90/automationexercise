@@ -18,3 +18,13 @@ Scenario: User can sign up
      And submits the signUp form
   Then user will get "Account Created!" success message
      And user will be logged in
+
+	 Scenario: User can delete their account
+  Given user can register account with "Lea" name
+     #And enters "Lea" name and valid email address
+     #And user clicks on SignUp button
+     #And user fills in all required fields
+     #And submits the signUp form
+	 When user selects option for deleting the account
+     Then user will get "ACCOUNT DELETED!" success message
+     
