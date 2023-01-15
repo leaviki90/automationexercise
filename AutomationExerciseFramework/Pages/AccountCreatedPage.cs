@@ -9,7 +9,7 @@ namespace AutomationExerciseFramework.Pages
     class AccountCreatedPage
     {
         readonly IWebDriver _driver;
-        public By page = By.CssSelector(".row [data-qa='account-created']");
+        public By page = By.CssSelector("h2.title");
         public By countinueBtn = By.CssSelector(".pull-right [data-qa='continue-button']");
 
         public AccountCreatedPage(IWebDriver driver)

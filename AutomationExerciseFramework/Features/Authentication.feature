@@ -26,5 +26,5 @@ Scenario: User can sign up
      #And user fills in all required fields
      #And submits the signUp form
 	 When user selects option for deleting the account
-     Then user will get "ACCOUNT DELETED!" success message
+     Then user will get "Account Deleted!" message
      

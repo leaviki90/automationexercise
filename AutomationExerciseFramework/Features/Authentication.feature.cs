@@ -175,7 +175,7 @@ this.ScenarioInitialize(scenarioInfo);
   testRunner.When("user selects option for deleting the account", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 29
-     testRunner.Then("user will get \"ACCOUNT DELETED!\" success message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+     testRunner.Then("user will get \"Account Deleted!\" message", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

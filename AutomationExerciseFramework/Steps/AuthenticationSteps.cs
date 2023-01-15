@@ -105,7 +105,16 @@ namespace AutomationExerciseFramework.Steps
         [When(@"user selects option for deleting the account")]
         public void WhenUserSelectsOptionForDeletingTheAccount()
         {
-            ScenarioContext.Current.Pending();
+
+            ut.ClickOnElement(hp.deleteAcc);
+        }
+
+        [Then(@"user will get ""(.*)"" message")]
+        public void ThenUserWillGetMessage(string message)
+        {
+            //DeletedAccount da = new DeletedAccount(Driver);
+            Assert.True(ut.TextPresentInElement(message), "User did NOT get expected success message"); //provera
+          
         }
 
 

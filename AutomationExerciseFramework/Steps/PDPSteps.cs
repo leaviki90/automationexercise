@@ -14,7 +14,13 @@ namespace AutomationExerciseFramework.Steps
     {
         Utilities ut = new Utilities(Driver);
         HeaderPage hp = new HeaderPage(Driver);
-   
+
+        private readonly ProductData productData; //promenljiva tipa ProductData
+
+        public PDPSteps(ProductData productData)   //da bi promenljiva bila dostupna na celoj ovoj strani (globalna)
+        {
+            this.productData = productData;
+        }
 
         [Given(@"user opens products page")]
         public void GivenUserOpensProductsPage()
@@ -43,8 +49,9 @@ namespace AutomationExerciseFramework.Steps
         public void WhenUserClicksOnAddToCartButton()
         {
             ProductDetailsPage pdp = new ProductDetailsPage(Driver);
-            string valueFromInput = Driver.FindElement(pdp.productId).GetAttribute("value");
-            Console.WriteLine(valueFromInput);
+            productData.ProductName = ut.ReturnTextFromElement(pdp.productName);
+          // productData.ProductId = Driver.FindElement(pdp.productId).GetAttribute("value");
+           // Console.WriteLine(valueFromInput);
 
             ut.ClickOnElement(pdp.addToCartBtn);
         }
@@ -57,10 +64,11 @@ namespace AutomationExerciseFramework.Steps
             
         }
         
-        [Then(@"shopping cart will be displayed with ""(.*)"" product inside")]
-        public void ThenShoppingCartWillBeDisplayedWithProductInside(string p0)
+        [Then(@"shopping cart will be displayed with expected product inside")]
+        public void ThenShoppingCartWillBeDisplayedWithProductInside()
         {
-            //Assert.True(ut.ElementIsDisplayed(), "Ooops, no results found!");
+            Assert.True(ut.TextPresentInElement(productData.ProductName), "Ooops, expected result is not in the cart!");
+            //Assert.True(ut.ElementIsDisplayed(productData.ProductId), "Noup");
             
 
         }
