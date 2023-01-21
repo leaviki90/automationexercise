@@ -4,9 +4,8 @@ using System.Text;
 
 namespace AutomationExerciseFramework.Helpers
 {
-    public class ProductData
+    public class CheckoutData
     {
-        public string ProductName;
-       
+        public string CheckoutComment; 
     }
 }

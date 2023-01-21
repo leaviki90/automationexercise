@@ -112,7 +112,7 @@ namespace AutomationExerciseFramework.Steps
         [Then(@"user will get ""(.*)"" message")]
         public void ThenUserWillGetMessage(string message)
         {
-            //DeletedAccount da = new DeletedAccount(Driver);
+           DeletedAccount da = new DeletedAccount(Driver);
             Assert.True(ut.TextPresentInElement(message), "User did NOT get expected success message"); //provera
           
         }

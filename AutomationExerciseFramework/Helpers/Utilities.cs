@@ -58,7 +58,9 @@ namespace AutomationExerciseFramework.Helpers
 
         public string ReturnTextFromElement(By locator)
         {
-            return _driver.FindElement(locator).GetAttribute("textContent");   // ili Text() ova je caseSensitive
+            return _driver.FindElement(locator).GetAttribute("value"); // zbog textarea mora sa value
+          // return _driver.FindElement(locator).GetAttribute("textContent"); 
+          // ili return _driver.FindElement(locator).Text ova je caseSensitive
         }
     }
 

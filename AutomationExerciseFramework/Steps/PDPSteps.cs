@@ -50,8 +50,7 @@ namespace AutomationExerciseFramework.Steps
         {
             ProductDetailsPage pdp = new ProductDetailsPage(Driver);
             productData.ProductName = ut.ReturnTextFromElement(pdp.productName);
-          // productData.ProductId = Driver.FindElement(pdp.productId).GetAttribute("value");
-           // Console.WriteLine(valueFromInput);
+            Console.WriteLine(productData.ProductName);
 
             ut.ClickOnElement(pdp.addToCartBtn);
         }
@@ -68,9 +67,12 @@ namespace AutomationExerciseFramework.Steps
         public void ThenShoppingCartWillBeDisplayedWithProductInside()
         {
             Assert.True(ut.TextPresentInElement(productData.ProductName), "Ooops, expected result is not in the cart!");
-            //Assert.True(ut.ElementIsDisplayed(productData.ProductId), "Noup");
+           
             
 
         }
+
+        
+
     }
 }
