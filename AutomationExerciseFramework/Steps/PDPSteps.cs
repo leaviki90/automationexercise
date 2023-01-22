@@ -72,7 +72,30 @@ namespace AutomationExerciseFramework.Steps
 
         }
 
-        
+        [Given(@"fills all the fields")]
+        public void GivenFillsAllTheFields()
+        {
+            ProductDetailsPage pdp = new ProductDetailsPage(Driver);
+            ut.EnterTextInElement(pdp.yourName, TestConstants.FirstName);
+            ut.EnterTextInElement(pdp.emailAddress, TestConstants.Username);
+            ut.EnterTextInElement(pdp.reviewMessage, TestConstants.Comment);
+        }
+
+        [When(@"user clicks on submit button")]
+        public void WhenUserClicksOnSubmitButton()
+        {
+            ProductDetailsPage pdp = new ProductDetailsPage(Driver);
+            Driver.FindElement(pdp.form).Submit();
+        }
+
+        [Then(@"receives feedback message")]
+        public void ThenReceivesFeedbackMessage()
+        {
+            ProductDetailsPage pdp = new ProductDetailsPage(Driver);
+            Assert.True(ut.ElementIsDisplayed(pdp.alert));
+        }
+
+
 
     }
 }

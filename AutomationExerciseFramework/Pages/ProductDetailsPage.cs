@@ -15,6 +15,11 @@ namespace AutomationExerciseFramework.Pages
         public By viewCartBtn = By.CssSelector(".modal-confirm a");
         public By productId = By.Id("product_id");
         public By productName = By.CssSelector(".product-information h2");
+        public By yourName = By.Id("name");
+        public By emailAddress = By.Id("email");
+        public By reviewMessage = By.Id("review");
+        public By form = By.Id("review-form");
+        public By alert = By.Id("review-section");
         public ProductDetailsPage(IWebDriver driver)
         {
             this._driver = driver;
